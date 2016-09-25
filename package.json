@@ -34,7 +34,6 @@
     "redux": "^3.6.0",
     "reelm": "^0.1.10",
     "regenerator": "^0.8.46",
-    "retail-ui": "git+ssh://git@git.skbkontur.ru:catalogue/retail-ui.git",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1"
