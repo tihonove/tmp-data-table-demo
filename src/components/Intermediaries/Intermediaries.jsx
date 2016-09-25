@@ -6,6 +6,9 @@ import { Miss, Match, Link } from 'react-router';
 
 import Opportunities from './Opportunities';
 import lifecycle from '../../utils/route-lifecycle';
+import Api from '../../Api';
+
+const api = new Api();
 
 function Intermediaries({ pathname, onUpdateOpportunities }) {
     return (
@@ -26,6 +29,10 @@ export default connect(
         ...props,
     }),
     dispatch => ({
-        onUpdateOpportunities: () => dispatch({ type: 'UpdateOpportunities' }),
+        onUpdateOpportunities: async () => {
+            dispatch({ type: 'BeginUpdateOpportunities' });
+            const opportunities = await api.getOpportunities();
+            dispatch({ type: 'FinsihUpdateOpportunities', opportunities: opportunities });
+        },
     })
 )(Intermediaries);
