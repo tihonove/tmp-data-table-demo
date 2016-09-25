@@ -5,17 +5,11 @@ const delay = tm => new Promise(r => setTimeout(r, tm));
 
 class Api {
     async getOpportunities() {
-        await delay(1000);
-        return [
-            {
-                name: 'Name 1',
-                value: 'Value 1',
-            },
-            {
-                name: 'Name 2',
-                value: 'Value 2',
-            },
-        ];
+        await delay(100);
+        return new Array(20).fill(0).map((x, i) => ({
+                name: 'oooooooooooooooooooooo Name ' + i,
+                value: 'oooooooooooooooooooooo Value ' + i,
+            }));
     }
 }
 
