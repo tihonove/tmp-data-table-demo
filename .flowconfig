@@ -1,0 +1,18 @@
+[ignore]
+.*/fbjs/.*
+.*/flux/.*
+.*/retail-ui/.*
+
+[include]
+
+[libs]
+interfaces/
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=local_modules
+
+module.name_mapper='^.*\.less+$' -> '<PROJECT_ROOT>/flow/StylesFlowStub'
+
+esproposal.class_instance_fields=enable
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
